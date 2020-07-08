@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutteranimationdemo/animationPage/AnimatedContainerpage.dart';
 import 'package:flutteranimationdemo/animationPage/AnimatedCrossFadepage.dart';
+import 'package:flutteranimationdemo/animationPage/DecorateBoxTransitionPage.dart';
+import 'package:flutteranimationdemo/animationPage/MyAnimateWidgtPage.dart';
 
 import 'animationPage/HeroPage.dart';
 
@@ -81,7 +83,8 @@ class animationList extends State{
   }
 
   List<String> getListData() => ["AnimatedContainer","AnimatedCrossFade","AnimatedWidget",
-    "AnimatedBuilder","AnimatedBuilder","DecoratedBoxTransition"];
+    "AnimatedBuilder","AnimatedBuilder","DecoratedBoxTransition","FadeTransition",
+    "PositionedTransition","RotationTransition"];
 
   getListItem(BuildContext context, int index, Animation<dynamic> animation) {
 
@@ -124,6 +127,18 @@ class animationList extends State{
        Future.delayed(Duration.zero, () {
          Navigator.push(context,    MaterialPageRoute(
              builder: (context) => new HoroPage()));
+       });
+       break;
+     case "AnimatedWidget":
+       Future.delayed(Duration.zero, () {
+         Navigator.push(context,    MaterialPageRoute(
+             builder: (context) => new MyAnimateWidgtPage()));
+       });
+       break;
+     case "DecoratedBoxTransition":
+       Future.delayed(Duration.zero, () {
+         Navigator.push(context,    MaterialPageRoute(
+             builder: (context) => new DecorateBoxTranistionPage()));
        });
        break;
    }
