@@ -3,6 +3,7 @@ import 'package:flutteranimationdemo/animationPage/AnimatedContainerpage.dart';
 import 'package:flutteranimationdemo/animationPage/AnimatedCrossFadepage.dart';
 import 'package:flutteranimationdemo/animationPage/DecorateBoxTransitionPage.dart';
 import 'package:flutteranimationdemo/animationPage/MyAnimateWidgtPage.dart';
+import 'package:flutteranimationdemo/animationPage/PositionTransitionPage.dart';
 
 import 'animationPage/HeroPage.dart';
 
@@ -48,7 +49,7 @@ class animationList extends State{
             child:     Container(
               margin: EdgeInsets.fromLTRB(50, 30, 0, 30),
               child: GestureDetector(
-                onTap: ()=>jumpToPage(context,itemNameList[2]),
+                onTap: ()=>jumpToPage(context,"Hero"),
                 child: Row(
                   children: <Widget>[
                     Text("hero"),
@@ -67,7 +68,7 @@ class animationList extends State{
           )
         ,
           Expanded(
-            flex: 1,
+            flex: 3,
             child:  AnimatedList(
               key: _listKey,
               initialItemCount: itemNameList.length,
@@ -139,6 +140,12 @@ class animationList extends State{
        Future.delayed(Duration.zero, () {
          Navigator.push(context,    MaterialPageRoute(
              builder: (context) => new DecorateBoxTranistionPage()));
+       });
+       break;
+     case "PositionedTransition":
+       Future.delayed(Duration.zero, () {
+         Navigator.push(context,    MaterialPageRoute(
+             builder: (context) => new PositionTranistionPage()));
        });
        break;
    }
