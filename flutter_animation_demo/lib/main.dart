@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutteranimationdemo/animationPage/AnimatedContainerpage.dart';
 import 'package:flutteranimationdemo/animationPage/AnimatedCrossFadepage.dart';
 
+import 'animationPage/HeroPage.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -36,19 +38,49 @@ class animationList extends State{
    itemNameList = getListData();
 
     return Scaffold(
-      body: Container(
-        child: AnimatedList(
-        key: _listKey,
-        initialItemCount: itemNameList.length,
-        itemBuilder: (BuildContext context, int index, Animation animation) {
-          return getListItem(context,index, animation);
-        },
-      ),
+      body:
+      Container(
+        child: Column(children: <Widget>[
+          Expanded(
+            flex: 1,
+            child:     Container(
+              margin: EdgeInsets.fromLTRB(50, 30, 0, 30),
+              child: GestureDetector(
+                onTap: ()=>jumpToPage(context,itemNameList[2]),
+                child: Row(
+                  children: <Widget>[
+                    Text("hero"),
+                    Hero(
+                      tag: "hero",
+                      child: Icon(Icons.timer,size: 45,),
+                      flightShuttleBuilder: (flightContext, animation, direction,
+                          fromContext, toContext) {
+                        return Icon(Icons.timer, size: 45.0,);
+                      },
+                    )
+                  ],
+                ),
+              ),
+            ),
+          )
+        ,
+          Expanded(
+            flex: 1,
+            child:  AnimatedList(
+              key: _listKey,
+              initialItemCount: itemNameList.length,
+              itemBuilder: (BuildContext context, int index, Animation animation) {
+                return getListItem(context,index, animation);
+              },
+            ) ,
+          ),
+
+        ],)
       )
     );
   }
 
-  List<String> getListData() => ["AnimatedContainer","AnimatedCrossFade","Hero","AnimatedWidget",
+  List<String> getListData() => ["AnimatedContainer","AnimatedCrossFade","AnimatedWidget",
     "AnimatedBuilder","AnimatedBuilder","DecoratedBoxTransition"];
 
   getListItem(BuildContext context, int index, Animation<dynamic> animation) {
@@ -86,6 +118,12 @@ class animationList extends State{
        Future.delayed(Duration.zero, () {
          Navigator.push(context,    MaterialPageRoute(
              builder: (context) => new AnimatedCrossFadepage()));
+       });
+       break;
+     case "Hero":
+       Future.delayed(Duration.zero, () {
+         Navigator.push(context,    MaterialPageRoute(
+             builder: (context) => new HoroPage()));
        });
        break;
    }
