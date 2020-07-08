@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutteranimationdemo/animationPage/AnimatedContainerpage.dart';
+import 'package:flutteranimationdemo/animationPage/AnimatedCrossFadepage.dart';
 
 void main() {
   runApp(MyApp());
@@ -79,6 +80,12 @@ class animationList extends State{
        Future.delayed(Duration.zero, () {
          Navigator.push(context,    MaterialPageRoute(
              builder: (context) => new AnimatedContainerPage()));
+       });
+       break;
+     case "AnimatedCrossFade":
+       Future.delayed(Duration.zero, () {
+         Navigator.push(context,    MaterialPageRoute(
+             builder: (context) => new AnimatedCrossFadepage()));
        });
        break;
    }
