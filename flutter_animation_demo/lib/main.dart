@@ -64,7 +64,7 @@ class animationList extends State{
           // Show a red background as the item is swiped away
           background: new Container(color: Colors.red),
           child:ListTile(
-            onTap: jumpToPage(context,itemNameList[index]),
+            onTap: ()=>jumpToPage(context,itemNameList[index]),//()=> 符号表示传递的是回调函数，不使用的话表示直接执行这个函数
             title: Text(
               itemNameList[index],
             ),
