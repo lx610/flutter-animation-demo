@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutteranimationdemo/animationPage/AnimatedContainerpage.dart';
 import 'package:flutteranimationdemo/animationPage/AnimatedCrossFadepage.dart';
+import 'package:flutteranimationdemo/animationPage/AnimatedDefaultTextStylepage.dart';
+import 'package:flutteranimationdemo/animationPage/AnimatedListStatePage.dart';
+import 'package:flutteranimationdemo/animationPage/AnimatedPositionedPage.dart';
 import 'package:flutteranimationdemo/animationPage/DecorateBoxTransitionPage.dart';
 import 'package:flutteranimationdemo/animationPage/MyAnimateWidgtPage.dart';
 import 'package:flutteranimationdemo/animationPage/PositionTransitionPage.dart';
 
+import 'animationPage/AnimatedOpacityPage.dart';
+import 'animationPage/AnimatedPhysicalModelPage.dart';
 import 'animationPage/HeroPage.dart';
 
 void main() {
@@ -85,7 +90,10 @@ class animationList extends State{
 
   List<String> getListData() => ["AnimatedContainer","AnimatedCrossFade","AnimatedWidget",
     "AnimatedBuilder","AnimatedBuilder","DecoratedBoxTransition","FadeTransition",
-    "PositionedTransition","RotationTransition"];
+    "PositionedTransition","RotationTransition","ScaleTransition","SizeTransition","SlideTransition",
+    "AnimatedDefaultTextStyle","AnimatedModalBarrier","AnimatedOpacity","AnimatedPhysicalModel","AnimatedPositioned",
+    "AnimatedSize","AnimatedWidget","AnimatedWidgetBaseState","AnimatedListState"
+  ];
 
   getListItem(BuildContext context, int index, Animation<dynamic> animation) {
 
@@ -146,6 +154,37 @@ class animationList extends State{
        Future.delayed(Duration.zero, () {
          Navigator.push(context,    MaterialPageRoute(
              builder: (context) => new PositionTranistionPage()));
+       });
+       break;
+     case "AnimatedListState":
+       Future.delayed(Duration.zero, () {
+         Navigator.push(context,    MaterialPageRoute(
+             builder: (context) => new AnimatedListStatePage()));
+       });
+       break;
+
+     case "AnimatedDefaultTextStyle":
+       Future.delayed(Duration.zero, () {
+         Navigator.push(context,    MaterialPageRoute(
+             builder: (context) => new AnimateDefaultTextStylePage()));
+       });
+       break;
+     case "AnimatedOpacity":
+       Future.delayed(Duration.zero, () {
+         Navigator.push(context,    MaterialPageRoute(
+             builder: (context) => new AimateOpacityPage()));
+       });
+       break;
+     case "AnimatedPhysicalModel":
+       Future.delayed(Duration.zero, () {
+         Navigator.push(context,    MaterialPageRoute(
+             builder: (context) => new AnimatePhysicalModelPage()));
+       });
+       break;
+     case "AnimatedPositioned":
+       Future.delayed(Duration.zero, () {
+         Navigator.push(context,    MaterialPageRoute(
+             builder: (context) => new AnimatedPositionPage()));
        });
        break;
    }
