@@ -8,9 +8,14 @@ import 'package:flutteranimationdemo/animationPage/DecorateBoxTransitionPage.dar
 import 'package:flutteranimationdemo/animationPage/MyAnimateWidgtPage.dart';
 import 'package:flutteranimationdemo/animationPage/PositionTransitionPage.dart';
 
+import 'animationPage/AnimateWidgetPage.dart';
+import 'animationPage/AnimatedModalBarrierPage.dart';
 import 'animationPage/AnimatedOpacityPage.dart';
 import 'animationPage/AnimatedPhysicalModelPage.dart';
+import 'animationPage/AnimatedSizePage.dart';
 import 'animationPage/HeroPage.dart';
+import 'animationPage/RotationTransitionPage.dart';
+import 'animationPage/SizeTransitionPage.dart';
 
 void main() {
   runApp(MyApp());
@@ -156,6 +161,21 @@ class animationList extends State{
              builder: (context) => new PositionTranistionPage()));
        });
        break;
+
+     case "SizeTransition":
+       Future.delayed(Duration.zero, () {
+         Navigator.push(context,    MaterialPageRoute(
+             builder: (context) => new SizeTransitionPage("SizeTransition")));
+       });
+       break;
+
+     case "RotationTransition":
+       Future.delayed(Duration.zero, () {
+         Navigator.push(context,    MaterialPageRoute(
+             builder: (context) => new RotationTransitionPage("RotationTransition")));
+       });
+       break;
+
      case "AnimatedListState":
        Future.delayed(Duration.zero, () {
          Navigator.push(context,    MaterialPageRoute(
@@ -169,6 +189,14 @@ class animationList extends State{
              builder: (context) => new AnimateDefaultTextStylePage()));
        });
        break;
+
+     case "AnimatedModalBarrier":
+       Future.delayed(Duration.zero, () {
+         Navigator.push(context,    MaterialPageRoute(
+             builder: (context) => new AnimatedModalBarrierPage("AnimatedModalBarrier")));
+       });
+       break;
+
      case "AnimatedOpacity":
        Future.delayed(Duration.zero, () {
          Navigator.push(context,    MaterialPageRoute(
@@ -181,10 +209,25 @@ class animationList extends State{
              builder: (context) => new AnimatePhysicalModelPage()));
        });
        break;
+
      case "AnimatedPositioned":
        Future.delayed(Duration.zero, () {
          Navigator.push(context,    MaterialPageRoute(
              builder: (context) => new AnimatedPositionPage()));
+       });
+       break;
+
+     case "AnimatedSize":
+       Future.delayed(Duration.zero, () {
+         Navigator.push(context,    MaterialPageRoute(
+             builder: (context) => new AnimatedSizePage("AnimatedSize")));
+       });
+       break;
+
+     case "AnimatedWidgetBaseState":
+       Future.delayed(Duration.zero, () {
+         Navigator.push(context,    MaterialPageRoute(
+             builder: (context) => new AnimateWidgetPage()));
        });
        break;
    }

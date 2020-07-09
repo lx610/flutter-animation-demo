@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'animateWidget/AnimatedLogo.dart';
+
 class MyAnimateWidgtPage extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
@@ -52,20 +54,20 @@ class AnimateLayout extends State with SingleTickerProviderStateMixin {
 
 }
 
-class AnimatedLogo extends AnimatedWidget {
-  AnimatedLogo({Key key, Animation<double> animation})
-      : super(key: key, listenable: animation);
-
-  Widget build(BuildContext context) {
-    // 外部传递过来的 Animation 对象
-    final Animation<double> animation = listenable;
-    return Center(
-      child: Container(
-        margin: EdgeInsets.symmetric(vertical: 10.0),
-        height: animation.value,
-        width: animation.value,
-        child: FlutterLogo(),
-      ),
-    );
-  }
-}
+//class AnimatedLogo extends AnimatedWidget {
+//  AnimatedLogo({Key key, Animation<double> animation})
+//      : super(key: key, listenable: animation);
+//
+//  Widget build(BuildContext context) {
+//    // 外部传递过来的 Animation 对象
+//    final Animation<double> animation = listenable;
+//    return Center(
+//      child: Container(
+//        margin: EdgeInsets.symmetric(vertical: 10.0),
+//        height: animation.value,
+//        width: animation.value,
+//        child: FlutterLogo(),
+//      ),
+//    );
+//  }
+//}

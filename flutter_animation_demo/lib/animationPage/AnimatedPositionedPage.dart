@@ -13,9 +13,11 @@ class AnimatedPositionPage extends StatefulWidget{
 }
 
 class AnimatedPositionLayout extends State {
+
   var _top = 30.0;
   var _left = 30.0;
   var _curve = Curves.easeOutQuart;
+
   @override
   Widget build(BuildContext context) {
       return Scaffold(
@@ -57,4 +59,6 @@ class AnimatedPositionLayout extends State {
         ),
       );
   }
+
+  
 }
